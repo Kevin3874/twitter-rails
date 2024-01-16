@@ -1,15 +1,17 @@
-<h1>Tweets</h1>
+<div class = "d-flex align-items-center justify-content-center">
+  <h1>Tweets</h1>
+</div>
 
 Our blog has <%= Tweet.public_count %> tweets and counting!
 
-<ul>
-  <% @tweets.each do |tweet| %>
-    <% unless tweet.archived? %>
-      <li>
-        <%= link_to tweet.title, tweet %>
-      </li>
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <% unless tweet.archived? %>
+        <li>
+          <%= link_to tweet.title, tweet %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<%= link_to "New Tweet", new_tweet_path %>
+  <%= link_to "New Tweet", new_tweet_path %>
