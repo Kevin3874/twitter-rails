@@ -16,6 +16,12 @@
   </div>
 
   <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: tweet.status || 'public' %>
+  </div>
+
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

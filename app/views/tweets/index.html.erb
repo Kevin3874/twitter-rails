@@ -1,10 +1,14 @@
 <h1>Tweets</h1>
 
+Our blog has <%= Tweet.public_count %> tweets and counting!
+
 <ul>
   <% @tweets.each do |tweet| %>
-    <li>
-      <%= link_to tweet.title, tweet %>
-    </li>
+    <% unless tweet.archived? %>
+      <li>
+        <%= link_to tweet.title, tweet %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
