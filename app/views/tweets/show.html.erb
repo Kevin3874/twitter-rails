@@ -1,0 +1,12 @@
+<h1><%= @tweet.title %></h1>
+
+<p><%= @tweet.body %></p>
+
+<ul>
+  <li><%= link_to "Back", tweets_path %></li>
+  <li><%= link_to "Edit", edit_tweet_path(@tweet) %></li>
+  <li><%= link_to "Destroy", tweet_path(@tweet), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
