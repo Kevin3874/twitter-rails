@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-  
+
   def index
     @tweets = Tweet.all
   end
@@ -46,6 +46,6 @@ class TweetsController < ApplicationController
 
   private
     def tweet_params
-      params.require(:tweet).permit(:title, :body)
+      params.require(:tweet).permit(:title, :body, :status)
     end
 end

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
-  
+
   def create
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.create(comment_params)
@@ -16,6 +16,6 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:commenter, :body)
+      params.require(:comment).permit(:commenter, :body, :status)
     end
 end
